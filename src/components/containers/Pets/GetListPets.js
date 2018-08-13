@@ -8,4 +8,5 @@ function mapStateToProps(state, ownProps) {
 }
 
 const connectedStateAndProps = connect(mapStateToProps);
+
 export default connectedStateAndProps(PetsList);

@@ -5,10 +5,10 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import configureStore from './store/configureStore'
 import { Provider } from 'react-redux'
-import CourseService from './api/PetsService'
+import PetsService from './api/PetsService'
 
 const defaultState = {
-    pets: CourseService.pets
+    pets: PetsService.pets
 }
 const store = configureStore(defaultState);
 
