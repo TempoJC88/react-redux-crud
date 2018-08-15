@@ -1,0 +1,1 @@
+export const GETLIST_PETS = 'GETLIST_PETS';
