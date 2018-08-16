@@ -44,8 +44,10 @@ class Create extends Component {
                                 <input placeholder="Nombre" name="nombre" type="text" className="validate" value={this.state.pet.nombre} onChange={this.handleInput.bind(this)} />                                
                             </div>                            
                         </div>        
-                        
-                        <input type="button" value='Crear' onClick={this.Crear.bind(this)} />                        
+
+                        <button class="btn waves-effect waves-light" type="submit" onClick={this.Crear.bind(this)} name="action">Crear
+                            <i class="material-icons right">send</i>
+                        </button>
               
                         {this.state.fireRedirect && ( <Redirect to="/listPets" /> )}
                     </form>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ItemList from "./ItemList";
 
@@ -11,14 +10,14 @@ class List extends Component {
             pets: props.pets.pets.result
         }
 
-        this.onDetailpet = this.onDetailpet.bind(this);
+        this.onDetail = this.onDetail.bind(this);
     }       
 
     static contextTypes={
         router: PropTypes.object
     }
     
-    onDetailpet(id, event){                
+    onDetail(id, event){                
         this.context.router.history.push('/detailPet/'+id);
     }   
 
@@ -26,12 +25,16 @@ class List extends Component {
         let pets = this.state.pets;
         return (
             <section>                  
-                <Link to='/createPet'>
-                <button type="button">Crear</button>
-                </Link>
                 <ul className="collection">                
                     {pets.map((item) => 
-                        <ItemList key={item.id} raza={item.raza} nombre={item.nombre} fechaNac={item.fechaNac} onDetailpet={(e) => this.onDetailpet(item.id, this)}></ItemList>
+                        <ItemList 
+                            key={item.id} 
+                            photo={item.foto}
+                            breed={item.raza} 
+                            firstName={item.nombre} 
+                            birthdate={item.fechaNac} 
+                            onDetail={(e) => this.onDetail(item.id, this)}>
+                        </ItemList>
                     )}                
                 </ul>
             </section>            

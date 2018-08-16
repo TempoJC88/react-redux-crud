@@ -2,18 +2,29 @@ import React, {Component} from 'react'
 
 class ItemList extends Component {
     getDateFormat(fecha){
-        return fecha;
+        let date = new Date(fecha);
+        let year = date.getFullYear();
+        let month = date.getMonth()+1;
+        let dt = date.getDate();
+
+        if (dt < 10) {
+            dt = '0' + dt;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        return year+'-' + month + '-'+dt;
     }
 
     render() {
-        //let dateFormat = this.getDateFormat(this.props.fechaNac);
+        let dateFormat = this.getDateFormat(this.props.birthdate);
         return (
-            <li className="collection-item avatar" onClick={this.props.onDetailpet.bind( this)}> 
-                <i className="material-icons circle red">play_arrow</i>
-                <span className="title">{this.props.nombre}</span>
-                <p>{this.props.raza} <br/>                 
-                </p>
-                <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a>
+            <li className="collection-item avatar" onClick={this.props.onDetail.bind( this)}> 
+                <img src={this.props.photo} alt="" class="circle" />
+                <span className="title">{this.props.firstName}</span>
+                <p>{this.props.breed} <br/> {dateFormat} </p>
+                <a href="#!" className="secondary-content"><i className="material-icons grey-text text-lighten-4">grade</i></a>
             </li>                  
         );
     }
