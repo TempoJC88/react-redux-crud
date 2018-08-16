@@ -805,7 +805,7 @@ let pets = {
 }
 
 const PetsService = {
-    pets: pets
+    pets
 }
 
 export default PetsService;

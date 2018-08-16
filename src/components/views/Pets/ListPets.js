@@ -1,14 +1,16 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import PetItem from "./PetItem";
+import ItemList from "./ItemList";
 
-class PetsList extends Component {
+class ListPets extends Component {
     constructor(props) {
         super();
-        this.state = {
-            pets: props.pets.pets.result            
-        }
         
+        this.state = {
+            pets: props.pets.pets.result
+        }
+
         this.onDetailpet = this.onDetailpet.bind(this);
     }       
 
@@ -20,16 +22,19 @@ class PetsList extends Component {
     }   
 
     static contextTypes={
-    router: PropTypes.object
+        router: PropTypes.object
     }
 
     render() {
         let pets = this.state.pets;
         return (
-            <section>                
+            <section>                  
+                <Link to='/createPet'>
+                <button type="button">Crear</button>
+                </Link>
                 <ul className="collection">                
                     {pets.map((item) => 
-                        <PetItem key={item.id} raza={item.raza} nombre={item.nombre} fechaNac={item.fechaNac} onDetailpet={(e) => this.onDetailpet(item.id, this)}></PetItem>
+                        <ItemList key={item.id} raza={item.raza} nombre={item.nombre} fechaNac={item.fechaNac} onDetailpet={(e) => this.onDetailpet(item.id, this)}></ItemList>
                     )}                
                 </ul>
             </section>            
@@ -37,4 +42,4 @@ class PetsList extends Component {
     }
 }
 
-export default PetsList;
+export default ListPets;
