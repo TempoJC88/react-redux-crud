@@ -3,9 +3,9 @@ import React, {Component} from 'react'
 class Detail extends Component {
     constructor(props){
         super();
-
-        console.log( "Detail");
-        console.log( props.pets.pets.result );
+        console.log( "Detail");        
+        //this.context.router.history.push('/detailPet/'+id);
+        //props.match.params.id
 
         this.state={
             pet:{
@@ -13,7 +13,7 @@ class Detail extends Component {
                 nombre: "",
                 id: "",
                 fechaNac:"" 
-            }            
+            }
         }
     }
 

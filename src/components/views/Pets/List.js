@@ -18,11 +18,8 @@ class List extends Component {
         router: PropTypes.object
     }
     
-    onDetailpet(id, event){
-        console.log(event);
-        console.log(id);
-        console.log(this.context.router);
-        this.context.router.history.push("/detailPet")
+    onDetailpet(id, event){                
+        this.context.router.history.push('/detailPet/'+id);
     }   
 
     render() {
