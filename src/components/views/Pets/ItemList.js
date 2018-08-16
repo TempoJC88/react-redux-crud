@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 
-class ItemList extends React.Component {
-    getDateFormat(fecha){        
+class ItemList extends Component {
+    getDateFormat(fecha){
         return fecha;
     }
 

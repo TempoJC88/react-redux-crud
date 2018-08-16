@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import { Redirect } from 'react-router-dom'
 
 class Detail extends Component {
     constructor(props){
         super();
 
+        console.log( "Detail");
         console.log( props.pets.pets.result );
 
         this.state={

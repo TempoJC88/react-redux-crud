@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ItemList from "./ItemList";
 
-class ListPets extends Component {
+class List extends Component {
     constructor(props) {
         super();
         
@@ -14,16 +14,16 @@ class ListPets extends Component {
         this.onDetailpet = this.onDetailpet.bind(this);
     }       
 
+    static contextTypes={
+        router: PropTypes.object
+    }
+    
     onDetailpet(id, event){
         console.log(event);
         console.log(id);
         console.log(this.context.router);
-        //this.context.router.history.push("/")
+        this.context.router.history.push("/detailPet")
     }   
-
-    static contextTypes={
-        router: PropTypes.object
-    }
 
     render() {
         let pets = this.state.pets;
@@ -42,4 +42,4 @@ class ListPets extends Component {
     }
 }
 
-export default ListPets;
+export default List;

@@ -1,4 +1,4 @@
-import CreatePet from '../../views/Pets/CreatePet'
+import Create from '../../views/Pets/Create'
 import { connect } from 'react-redux';
 import {createPet} from '../../../actions/';
 
@@ -10,11 +10,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-function mapStateToProps(state, ownProps){
-    return{
-        pets: state.pets
-    };
-}
+const mapStateToProps = ({ pets }) => ({ pets });
 
 const connectedStateAndProps = connect(mapStateToProps, mapDispatchToProps);
-export default connectedStateAndProps(CreatePet);
+export default connectedStateAndProps(Create);

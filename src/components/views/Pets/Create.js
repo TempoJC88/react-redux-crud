@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { Redirect } from 'react-router-dom'
 
-class CreatePet extends Component {
+class Create extends Component {
     constructor(props){
         super();
 
@@ -47,7 +47,7 @@ class CreatePet extends Component {
                         
                         <input type="button" value='Crear' onClick={this.Crear.bind(this)} />                        
               
-                        {this.state.fireRedirect && ( <Redirect to="/pets" /> )}
+                        {this.state.fireRedirect && ( <Redirect to="/listPets" /> )}
                     </form>
                 </div>
             </section>            
@@ -55,4 +55,4 @@ class CreatePet extends Component {
     }
 }
 
-export default CreatePet;
+export default Create;
