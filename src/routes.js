@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import App from './App'
 import Layout from './components/views/Layout';
+import Home from './components/views/Layout/Home';
 import GetList from './components/containers/Pets/GetList'
 import Create from './components/containers/Pets/Create'
 import Detail from './components/containers/Pets/Detail'
@@ -15,7 +16,7 @@ const Routes = () => {
                 <Route
                     exact
                     path="/"
-                    render={props => withLayout(<GetList {...props} />, 'HOME')}
+                    render={props => withLayout(<Home />, 'HOME')}
                 />
                 <Route
                     exact

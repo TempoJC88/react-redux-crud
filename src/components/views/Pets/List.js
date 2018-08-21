@@ -23,20 +23,20 @@ class List extends Component {
 
     render() {
         let pets = this.state.pets;
+        
         return (
             <section>                  
-                <ul className="collection">                
+                 <div className="row">
                     {pets.map((item) => 
                         <ItemList 
                             key={item.id} 
                             photo={item.foto}
                             breed={item.raza} 
                             firstName={item.nombre} 
-                            birthdate={item.fechaNac} 
                             onDetail={(e) => this.onDetail(item.id, this)}>
                         </ItemList>
                     )}                
-                </ul>
+                </div>
             </section>            
         );
     }

@@ -1,31 +1,24 @@
 import React, {Component} from 'react'
 
 class ItemList extends Component {
-    getDateFormat(fecha){
-        let date = new Date(fecha);
-        let year = date.getFullYear();
-        let month = date.getMonth()+1;
-        let dt = date.getDate();
-
-        if (dt < 10) {
-            dt = '0' + dt;
-        }
-        if (month < 10) {
-            month = '0' + month;
-        }
-
-        return year+'-' + month + '-'+dt;
-    }
-
     render() {
-        let dateFormat = this.getDateFormat(this.props.birthdate);
+        const { onDetail, photo, firstName, breed } = this.props;
         return (
-            <li className="collection-item avatar" onClick={this.props.onDetail.bind( this)}> 
-                <img src={this.props.photo} alt="" class="circle" />
-                <span className="title">{this.props.firstName}</span>
-                <p>{this.props.breed} <br/> {dateFormat} </p>
-                <a href="#!" className="secondary-content"><i className="material-icons grey-text text-lighten-4">grade</i></a>
-            </li>                  
+            <div className="col s12 m6 xl4">
+                <div className="card medium">
+                    <div className="card-image waves-effect waves-block waves-light">
+                        <img className="activator" src={photo} alt={breed} />
+                    </div>
+                    <div className="card-content">
+                        <span className="card-title activator grey-text text-darken-4">{firstName}<i className="material-icons grey-text text-lighten-4 right">grade</i></span>
+                        <p>{breed}</p>
+                    </div>
+                    <div className="card-action">
+                        <a onClick={onDetail.bind( this)}>Detail</a>
+                        <a>Delete</a>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

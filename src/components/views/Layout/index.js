@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Header from './Header';
 
 class Layout extends Component {
   constructor() {
@@ -22,18 +22,10 @@ class Layout extends Component {
 
   render() {      
     const { children, title } = this.props;
+  
     return (
       <div>
-        <nav className="green lighten-1" role="navigation">
-          <div className="nav-wrapper">
-            <span className="brand-logo center">{title}</span>
-            <ul className="right hide-on-med-and-down">              
-              <li><NavLink  to="/listPets"><i className="Large material-icons">pets</i></NavLink></li>
-              <li><NavLink  to="/createPet"><i className="Large material-icons">plus_one</i></NavLink></li>
-              <li><NavLink  to="/"><i className="Large material-icons">home</i></NavLink></li>
-            </ul>
-          </div>
-        </nav>
+        <Header title={title}></Header>
         <div className="section">
           <div className="row">
               <div className="container">
@@ -45,7 +37,6 @@ class Layout extends Component {
     );
   }
 }
-
 
 Layout.propTypes = {
     children: PropTypes.node,
