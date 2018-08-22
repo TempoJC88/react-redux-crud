@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
 class ItemList extends Component {
     render() {
@@ -14,8 +14,8 @@ class ItemList extends Component {
                         <p>{breed}</p>
                     </div>
                     <div className="card-action">
-                        <a onClick={onDetail.bind( this)}>Detail</a>
-                        <a>Delete</a>
+                        <a onClick={onDetail.bind(this)}>Detalle</a>
+                        <a>Eliminar</a>
                     </div>
                 </div>
             </div>
